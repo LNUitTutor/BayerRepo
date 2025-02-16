@@ -20,9 +20,13 @@ def inputAndSum():
 
 # Обслуговуємо трьох покупців
 s = 0.0
+m = 0.0
 for i in range(3):
     b = inputAndSum()
+    if b > m:
+        m = b
     s += b
     print(f"bayer({i+1}) : {b}")
 # Виведення результату
 print("Total =", s)
+print("Greatest =", m)
