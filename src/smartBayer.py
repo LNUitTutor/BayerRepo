@@ -6,13 +6,9 @@ def inputList():
     data = input("Введіть покупки у форматі 'ціна:кількість, ціна:кількість, ...': ")
     return list(map(parsePair, data.split(',')))
 
-def multPair(pair):
-    price, count = pair
-    return price * count
-
 def calcSumAndMax(purchases):
     summa = sum(price * count for price, count in purchases)
-    maximum = max(map(multPair, purchases))
+    maximum = max(map(lambda p: p[0] * p[1], purchases))
     return summa, maximum
 
 s = 0.0
